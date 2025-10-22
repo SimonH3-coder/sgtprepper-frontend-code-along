@@ -1,10 +1,26 @@
-import { Heading } from "../atoms/index.js";
+import { Heading, Li, Link, Ul } from "../atoms/index.js";
 
 export const HeaderView = (className = "") => {
   const element = document.createElement("header");
-  element.className = "bg-slate-500 shadow-md border rounded-lg p-4 text-white";
+  element.className = "";
   const h1 = Heading("Sgt.Prepper");
   element.append(h1);
+  return element;
+};
+
+export const NavBarView = (arrNavItems) => {
+  const element = document.createElement("nav");
+  const ul = Ul("flex");
+  arrNavItems.forEach((item) => {
+    const { href, title } = item;
+
+    const li = Li();
+    const item1 = Link(href, title);
+    li.append(item1);
+    ul.append(li);
+  });
+
+  element.append(ul);
   return element;
 };
 

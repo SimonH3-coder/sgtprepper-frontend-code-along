@@ -21,3 +21,23 @@ export const Heading = (text, num = 1, className = "") => {
   element.textContent = text;
   return element;
 };
+
+export const Ul = (className = "") => {
+  const element = document.createElement("ul");
+  element.className = className;
+  return element;
+};
+
+export const Li = (className = "") => {
+  const element = document.createElement("li");
+  element.className = className;
+  return element;
+};
+
+export const Link = (to, text = "", className = "") => {
+  const element = document.createElement("a");
+  element.className = className;
+  element.href = to;
+  element.innerText = text;
+  return element;
+};
