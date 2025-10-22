@@ -1,20 +1,22 @@
 import { Heading } from "../atoms/index.js";
 
-export const Header = (className = "") => {
-  const header = document.createElement("header");
-  header.className = className;
-  const heading = Heading(1);
-  heading.textContent = "Sgt.Prepper";
-  header.append(heading);
-  return header;
+export const HeaderView = (className = "") => {
+  const element = document.createElement("header");
+  element.className = "bg-slate-500 shadow-md border rounded-lg p-4 text-white";
+  const h1 = Heading("Sgt.Prepper");
+  element.append(h1);
+  return element;
 };
 
-export const Main = (className = "") => {
-  const main = document.createElement("main");
-  return main;
+export const MainView = (title, content) => {
+  const element = document.createElement("main");
+  const h1 = Heading(title);
+  element.append(h1, content);
+  return element;
 };
 
-export const Footer = (className = "") => {
-  const footer = document.createElement("footer");
-  return footer;
+export const FooterView = (className = "") => {
+  const element = document.createElement("footer");
+  element.innerHTML = "&copy; TECHCOLLEGE 2025";
+  return element;
 };

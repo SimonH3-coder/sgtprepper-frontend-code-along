@@ -1,11 +1,9 @@
-import { Div, Paragraph } from "../views/atoms/index.js";
-import { Footer, Header, Main } from "../views/molecules/index.js";
+import { Paragraph } from "../views/atoms/index.js";
+import { Layout } from "./layoutController.js";
 
 export const HomePage = () => {
-  const div = Div();
-  const header = Header();
-  const main = Main();
-  const footer = Footer();
-  div.append(header, main, footer);
-  return div;
+  const title = "Velkommen";
+  const p = Paragraph();
+  p.innerText = "Velkommen til Sgt.Prepper webshop";
+  return Layout(title, p);
 };
