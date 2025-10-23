@@ -12,10 +12,10 @@ export const NavBarView = (arrNavItems) => {
   const element = document.createElement("nav");
   const ul = Ul("flex");
   arrNavItems.forEach((item) => {
-    const { href, title } = item;
+    const { url, title } = item;
 
     const li = Li();
-    const item1 = Link(href, title);
+    const item1 = Link(url, title);
     li.append(item1);
     ul.append(li);
   });
