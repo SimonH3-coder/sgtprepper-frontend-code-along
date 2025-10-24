@@ -41,3 +41,12 @@ export const Link = (to, text = "", className = "") => {
   element.innerText = text;
   return element;
 };
+
+export const Image = (src, title, className = "") => {
+  const element = document.createElement("img");
+  element.src = src;
+  element.className = className;
+  element.alt = title;
+  element.title = title;
+  return element;
+};
