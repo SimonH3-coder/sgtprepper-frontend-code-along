@@ -1,5 +1,5 @@
 //import
-@use "style.scss" as *;
+@use "partials-style.scss" as *;
 
 body {
   background-color: #64748b;
@@ -18,4 +18,13 @@ div {
 
 img {
   max-width: 200px;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
 }
