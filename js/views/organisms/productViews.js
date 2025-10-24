@@ -4,7 +4,7 @@ export const ProductListView = (products) => {
   const element = Fragment();
 
   products.forEach((product) => {
-    const { imageUrl, name, price, slug, stock, teaser } = product;
+    const { imageUrl, name, price, slug, stockText, stockClass, teaser } = product;
 
     const div = Div("border flex justify-between");
     const img = Image(`http://localhost:4000${imageUrl}`, name, "max-w-[200px]");
@@ -20,6 +20,11 @@ export const ProductListView = (products) => {
 
     const cost = Div("text-right border");
     cost.innerText = price;
+
+    const stockElm = Paragraph(stockClass);
+    stockElm.innerText = stockText;
+    cost.append(stockElm);
+
     div.append(cost);
 
     element.append(div);

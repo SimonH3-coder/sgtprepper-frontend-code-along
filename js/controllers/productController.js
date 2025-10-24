@@ -8,7 +8,14 @@ export const ProductPage = async () => {
 
   //Bygger prodkt liste
   const data = await getList(category);
-  const html = ProductListView(data);
+
+  const formattedProducts = data.map((item) => ({
+    ...item,
+    stockText: item.stock ? "På lager" : "Forventes på lager indenfor få uger",
+    stockClass: item.stock ? "text-green-600" : "text-red-600",
+  }));
+
+  const html = ProductListView(formattedProducts);
 
   // Samler og returnerer side layoutet
   const layout = Layout("Produkter", html);
