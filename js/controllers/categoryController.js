@@ -10,7 +10,7 @@ export const getGategoryList = async () => {
     slug: item.slug,
     title: item.title,
     url: `/index.htm?category=${item.slug}`,
-    textColor: curCategory === item.slug ? "text-yellow-500" : "text-white",
+    textColor: curCategory === item.slug ? "text-yellow" : "text-white",
   }));
 
   return formattedCategories;

@@ -34,7 +34,7 @@ img {
   max-width: 200px;
 }
 
-ul {
+.ul {
   display: flex;
   flex-direction: column;
 }
@@ -48,4 +48,16 @@ div product-details {
   flex-direction: column;
   gap: 0.5rem;
   max-width: 250px;
+}
+
+.text-yellow {
+  color: yellow;
+}
+
+.text-white {
+  color: white;
+}
+
+.background-sky-950 {
+  background-color: #0f172a;
 }/*# sourceMappingURL=main.css.map */

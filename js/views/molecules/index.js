@@ -17,7 +17,7 @@ export const NavBarView = (arrNavItems) => {
     const { url, title } = item; // Destructure assigment - udskiller egenskaber fra objektet
 
     const li = Li();
-    const item1 = Link(url, title, `block p-4 ${item.texColor}`);
+    const item1 = Link(url, title, `block p-4 ${item.textColor}`);
     li.append(item1);
     ul.append(li);
   });
