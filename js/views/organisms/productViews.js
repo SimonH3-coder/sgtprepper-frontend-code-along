@@ -1,3 +1,4 @@
+import { price2Dkk } from "../../utils/index.js";
 import { Div, Fragment, Heading, Paragraph, Image, Link } from "../atoms/index.js";
 
 export const ProductListView = (products, category) => {
@@ -21,7 +22,7 @@ export const ProductListView = (products, category) => {
     div.append(info);
 
     const cost = Div("text-right border");
-    cost.innerText = price;
+    cost.innerText = price2Dkk(price);
 
     const stockElm = Paragraph(stockClass);
     stockElm.innerText = stockText;
@@ -39,23 +40,22 @@ export const ProductListView = (products, category) => {
 export const ProductDetailsView = (product) => {
   const { id, name, imageUrl, description, price } = product;
 
-  const element = Div("flex");
-  const img = Image(`http://localhost:4000${imageUrl}`, name, "max-w-[250px]");
+  const element = Div("flex justfy-between gap-4 p-4 border rounded-lg");
+  const img = Image(`http://localhost:4000${imageUrl}`, name, "w-[300px] flec-shrink-0");
   element.append(img);
 
-  const div1 = Div();
-  const h3 = Heading(name, 3);
-  div1.append(h3);
+  const infoElm = Div();
+  const h3 = Heading(name, 3, "font-bold");
+  infoElm.append(h3);
 
   const p = Paragraph();
   p.innerHTML = description;
-  div1.append(p);
+  infoElm.append(p);
+  element.append(infoElm);
 
-  const priceSection = Paragraph();
-  priceSection.innerHTML = price;
-  div1.append(priceSection);
-
-  element.append(div1);
+  const priceElm = Div("text-2xl");
+  priceElm.innerHTML = price2Dkk(price);
+  element.append(priceElm);
 
   return element;
 };
