@@ -68,14 +68,17 @@ export const Label = (title, id, className = "mr-4") => {
 export const Input = (name, placeholder, type = "text", value = "", className = "border rounded p-2") => {
   const element = document.createElement("input");
   element.type = type;
+  element.id = name;
   element.name = name;
   element.placeholder = placeholder;
   element.value = value;
   element.className = className;
+  element.autocomplete = true;
+  element.required = true;
   return element;
 };
 
-export const Button = (title, type = "submit", className = "") => {
+export const Button = (title, type = "submit", className = "bg-green-300 p-2 rounded shadow-md shadow-inset") => {
   const element = document.createElement("button");
   element.type = type;
   element.textContent = title;

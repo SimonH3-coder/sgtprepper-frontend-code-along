@@ -1,12 +1,25 @@
-import { Button, Div, Form } from "../views/atoms/index.js";
-import { FormGroup } from "../views/molecules/index.js";
+import { Authenticate } from "../models/loginModel.js";
+import { LoginFormView } from "../views/organisms/loginView.js";
 import { Layout } from "./layoutController.js";
 
 export const LoginPage = () => {
-  const form = Form();
-  const username = FormGroup("Brugernavn", "username", "Indtast dit brugernavn", "text");
-  const password = FormGroup("Adgangskode", "password", "Indtast dit password", "password");
-  const button = Button("Send");
-  form.append(username, password, button);
-  return Layout("Login", form);
+  const element = LoginFormView();
+
+  element.addEventListener("submit", (e) => {
+    handleLogin(e);
+  });
+
+  return Layout("Login", element);
+};
+
+export const handleLogin = async (e) => {
+  e.preventDefault();
+  const form = e.currentTarget;
+  const username = form.username.value.trim();
+  const password = form.password.value.trim();
+
+  if (username && password) {
+    const data = await Authenticate(username, password);
+    console.log(data);
+  }
 };
