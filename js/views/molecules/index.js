@@ -1,10 +1,14 @@
-import { Heading, Li, Link, Ul } from "../atoms/index.js";
+import { Heading, Input, Label, Li, Link, Paragraph, Ul, Div } from "../atoms/index.js";
 
 export const HeaderView = (className = "") => {
   const element = document.createElement("header");
-  element.className = "";
+  element.className = "bg-slate-700 p-4 text-white";
   const h1 = Heading("Sgt.Prepper");
   element.append(h1);
+  const p = Paragraph();
+  const a = Link("/index.htm#/login", "Login");
+  p.append(a);
+  element.append(p);
   return element;
 };
 
@@ -28,6 +32,7 @@ export const NavBarView = (arrNavItems) => {
 
 export const MainView = (title, content) => {
   const element = document.createElement("main");
+  element.className = "p-4 min-h-60 container";
   const h1 = Heading(title);
   element.append(h1, content);
   return element;
@@ -35,6 +40,15 @@ export const MainView = (title, content) => {
 
 export const FooterView = (className = "") => {
   const element = document.createElement("footer");
+  element.className = "h-[170px] p-4 bg-[url(./images/footer-bg.svg)] bg-center bg-no-repeat bg-cover flex items-end";
   element.innerHTML = "&copy; TECHCOLLEGE 2025";
+  return element;
+};
+
+export const FormGroup = (title, name, placeholder, type, value) => {
+  const element = Div();
+  const label = Label(title, name);
+  const input = Input(name, placeholder, type, value);
+  element.append(label, input);
   return element;
 };
