@@ -10,11 +10,13 @@ export const LoginFormView = () => {
   return form;
 };
 
-export const UserInfoView = () => {
+export const UserInfoView = (user) => {
   const element = Paragraph();
-  element.innerText = `Velkommen`;
+  element.innerText = `Velkommen ${user.firstName} ${user.lastName}`;
   const button = Button("Logout", "button");
   button.addEventListener("click", () => {
     deleteSessionItem("sgtprepper_token");
   });
+  element.append(button);
+  return element;
 };

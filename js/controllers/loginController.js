@@ -2,15 +2,15 @@
 import { Authenticate } from "../models/loginModel.js";
 import { deleteSessionItem, getSessionItem, setSessionItem } from "../services/auth.js";
 import { Button } from "../views/atoms/index.js";
-import { LoginFormView } from "../views/organisms/loginView.js";
+import { LoginFormView, UserInfoView } from "../views/organisms/loginView.js";
 import { Layout } from "./layoutController.js";
 
 // Funktion der laver hele login-siden
 export const LoginPage = () => {
   if (getSessionItem("sgtprepper_token")) {
-    console.log("Bruger er logget ind");
-
-    return Layout("Logout", button);
+    const token = getSessionItem("sgtprepper_token");
+    const html = UserInfoView(token.user);
+    return Layout("Din side", html);
   } else {
   }
 
@@ -42,6 +42,7 @@ export const handleLogin = async (e) => {
 
     if (data.accessToken) {
       setSessionItem("sgtprepper_token", data);
+      location.href = "./index.htm";
     }
   }
 };

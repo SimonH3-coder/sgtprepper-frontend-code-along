@@ -15,4 +15,5 @@ export const getSessionItem = (name) => {
 
 export const deleteSessionItem = (name) => {
   sessionStorage.removeItem(name);
+  lacation.reload();
 };
