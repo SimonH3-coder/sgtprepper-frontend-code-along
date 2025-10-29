@@ -40,8 +40,8 @@ export const ProductListView = (products, category) => {
 export const ProductDetailsView = (product) => {
   const { id, name, imageUrl, description, price } = product;
 
-  const element = Div("flex justfy-between gap-4 p-4 border rounded-lg");
-  const img = Image(`http://localhost:4000${imageUrl}`, name, "w-[300px] flec-shrink-0");
+  const element = Div("flex justify-between gap-4 p-4 border rounded-lg");
+  const img = Image(`http://localhost:4000${imageUrl}`, name, "w-[300px] flex-shrink-0");
   element.append(img);
 
   const infoElm = Div();

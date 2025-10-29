@@ -2,7 +2,7 @@ import { Heading, Input, Label, Li, Link, Paragraph, Ul, Div } from "../atoms/in
 
 export const HeaderView = (className = "") => {
   const element = document.createElement("header");
-  element.className = "bg-slate-700 p-4 text-white";
+
   const h1 = Heading("Sgt.Prepper");
   element.append(h1);
   const p = Paragraph();

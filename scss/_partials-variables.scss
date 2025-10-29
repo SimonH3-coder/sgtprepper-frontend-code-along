@@ -1,0 +1,28 @@
+// Color Variables
+$color-background: #64748b;
+$color-white: #ffffff;
+$color-border: #e5e7eb;
+$color-yellow: yellow;
+$color-sky-950: #0f172a;
+$color-header: #334155;
+$color-nav: #0c4a6e;
+$color-button: #86efac;
+$color-green: green;
+$color-red: red;
+
+// Utility classes
+.text-yellow {
+  color: $color-yellow;
+}
+.text-white {
+  color: $color-white;
+}
+.text-green {
+  color: $color-green;
+}
+.text-red {
+  color: $color-red;
+}
+.background-sky-950 {
+  background-color: $color-sky-950;
+}

@@ -1,4 +1,4 @@
-import { Button, Form } from "../atoms/index.js";
+import { Button, Form, Paragraph } from "../atoms/index.js";
 import { FormGroup } from "../molecules/index.js";
 
 export const LoginFormView = () => {
@@ -8,4 +8,13 @@ export const LoginFormView = () => {
   const button = Button("Send");
   form.append(username, password, button);
   return form;
+};
+
+export const UserInfoView = () => {
+  const element = Paragraph();
+  element.innerText = `Velkommen`;
+  const button = Button("Logout", "button");
+  button.addEventListener("click", () => {
+    deleteSessionItem("sgtprepper_token");
+  });
 };

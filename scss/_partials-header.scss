@@ -1,0 +1,23 @@
+@use "partials-variables.scss" as *;
+
+// Header og nav
+header {
+  background-color: $color-header;
+  padding: 1rem;
+  color: $color-white;
+}
+
+nav {
+  background-color: $color-nav;
+
+  ul {
+    display: inline-flex;
+    list-style-type: none;
+
+    gap: 1rem;
+  }
+
+  li {
+    color: aqua;
+  }
+}
