@@ -1,14 +1,13 @@
 // Impoerter funktioner og komponenter vi skal bruge
 import { Authenticate } from "../models/loginModel.js";
-import { deleteSessionItem, getSessionItem, setSessionItem } from "../services/auth.js";
-import { Button } from "../views/atoms/index.js";
+import { getToken, setToken } from "../services/auth.js";
 import { LoginFormView, UserInfoView } from "../views/organisms/loginView.js";
 import { Layout } from "./layoutController.js";
 
 // Funktion der laver hele login-siden
 export const LoginPage = () => {
-  if (getSessionItem("sgtprepper_token")) {
-    const token = getSessionItem("sgtprepper_token");
+  if (getToken()) {
+    const token = getToken();
     const html = UserInfoView(token.user);
     return Layout("Din side", html);
   } else {
@@ -41,7 +40,8 @@ export const handleLogin = async (e) => {
     const data = await Authenticate(username, password);
 
     if (data.accessToken) {
-      setSessionItem("sgtprepper_token", data);
+      setToken(data);
+
       location.href = "./index.htm";
     }
   }

@@ -17,3 +17,16 @@ export const deleteSessionItem = (name) => {
   sessionStorage.removeItem(name);
   lacation.reload();
 };
+
+export const getToken = () => {
+  return getSessionItem("sgtprepper_token");
+};
+
+export const setToken = (token) => {
+  setSessionItem("sgtprepper_token", token);
+};
+
+export const clearToken = () => {
+  deleteSessionItem("sgtprepper_token");
+  location.reload();
+};
