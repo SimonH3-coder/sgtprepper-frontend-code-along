@@ -1,5 +1,5 @@
 import { price2Dkk } from "../../utils/index.js";
-import { Div, Fragment, Heading, Paragraph, Image, Link } from "../atoms/index.js";
+import { Div, Fragment, Heading, Paragraph, Image, Link, Form, Input, Button } from "../atoms/index.js";
 
 export const ProductListView = (products, category) => {
   const element = Fragment();
@@ -40,22 +40,33 @@ export const ProductListView = (products, category) => {
 export const ProductDetailsView = (product) => {
   const { id, name, imageUrl, description, price } = product;
 
+  console.log(id);
+
   const element = Div("flex justify-between gap-4 p-4 border rounded-lg");
-  const img = Image(`http://localhost:4000${imageUrl}`, name, "w-[300px] flex-shrink-0");
+
+  const imageCol = Div("shrink-0 w-[300px");
+  const img = Image(`http://localhost:4000${imageUrl}`, name, "w-[90%] flex-shrink-0 rounded");
   element.append(img);
 
-  const infoElm = Div();
-  const h3 = Heading(name, 3, "font-bold");
-  infoElm.append(h3);
+  const infoCol = Div("flex-1 min-w-0");
+  const h3 = Heading(name, 1, "font-bold mb-2");
+  infoCol.append(h3);
 
   const p = Paragraph();
   p.innerHTML = description;
-  infoElm.append(p);
-  element.append(infoElm);
+  infoCol.append(p);
 
-  const priceElm = Div("text-2xl");
-  priceElm.innerHTML = price2Dkk(price);
-  element.append(priceElm);
+  const form = Form("POST");
+  const productId = Input("productId", "", "hidden", id);
+  const quantity = Input("quantity", "", number, 0);
+  const button = Button("Læg i kurv", "submit");
 
+  form.append(productId, quantity, button);
+  infoCol.append(form);
+
+  const priceCol = Div("text-2xl");
+  priceCol.innerHTML = price2Dkk(price);
+
+  element.append(imageCol, infoCol, priceCol);
   return element;
 };
