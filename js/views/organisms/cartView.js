@@ -4,21 +4,21 @@ export const cartListView = (data = []) => {
   const element = Ul();
 
   data.forEach((item) => {
-    const li = Li("flex justify-between");
+    const li = Li("flex py-1 justify-between");
 
-    const quantity = Div("w-[50px]");
+    const quantity = Div("w-[10%]");
     quantity.innerText = item.quantity;
     li.append(quantity);
 
-    const name = Div();
+    const name = Div("w-[60%]");
     name.innerText = item.product.name;
     li.append(name);
 
-    const price = Div("text-right");
+    const price = Div("text-right w-[20%]");
     price.innerText = price2Dkk(item.product.price);
     li.append(price);
 
-    const action = Div();
+    const action = Div("text-right w-[10%]");
     action.innerText = "Slet";
     li.append(action);
 
@@ -26,4 +26,32 @@ export const cartListView = (data = []) => {
   });
 
   return element;
+};
+
+export const cartListHeaderView = (arrColumns) => {
+  const cartHeader = Div("flex gap-3 border-b border-black py-1 justtify-between");
+
+  arrColumns.forEach((item) => {
+    const col = Div(item.className);
+    col.textContent = item.name;
+    cartHeader.append(col);
+  });
+
+  return cartHeader;
+};
+
+export const cartTotalView = (totalPrice) => {
+  const totalRow = Div("flex gap-3 border-b border-t py-1 justtify-between");
+
+  const textCol = Div("w-[70%] font-bold");
+  textCol.innerText = "Total";
+
+  const totalCol = Div("w-[20%] text-right font-bold");
+  totalCol.innerText = price2Dkk(totalPrice);
+
+  const spaceCol = Div("w-[10%]");
+
+  totalRow.append(textCol, totalCol, spaceCol);
+
+  return totalRow;
 };
