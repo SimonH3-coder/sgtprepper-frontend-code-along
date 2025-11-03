@@ -58,7 +58,7 @@ export const ProductDetailsView = (product) => {
 
   const form = Form("POST");
   const productId = Input("productId", "", "hidden", id);
-  const quantity = Input("quantity", "", number, 0);
+  const quantity = Input("quantity", "", "number", 0);
   const button = Button("Læg i kurv", "submit");
 
   form.append(productId, quantity, button);
