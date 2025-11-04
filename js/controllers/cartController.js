@@ -1,9 +1,15 @@
-import { getCartList } from "../models/cartModel.js";
+import { getCartList, removeFromCart } from "../models/cartModel.js";
 import { Div } from "../views/atoms/index.js";
-import { cartListHeaderView, cartListView } from "../views/organisms/cartView.js";
+import { cartListHeaderView, cartListView, cartTotalView } from "../views/organisms/cartView.js";
 import { Layout } from "../controllers/layoutController.js";
+import { isLoggedIn } from "../services/auth.js";
 
 export const Cartpage = async () => {
+  if (!isLoggedIn()) {
+    location.href = "/index.htm#/login";
+    return false;
+  }
+
   const data = await getCartList();
 
   const arrHeaderColumns = [
@@ -21,6 +27,17 @@ export const Cartpage = async () => {
   html.append(cartListHeaderView(arrHeaderColumns));
   html.append(cartListView(data));
   html.append(cartTotalView(totalPrice));
+  attachCartListEvents(html);
 
   return Layout("Indkøbskurv", html);
+};
+
+const attachCartListEvents = (container) => {
+  const deleteBtns = container.querySellectorAll("button[data-cartid]");
+  deleteBtns.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      const cartId = e.target.dataset.cartid;
+      removeFromCart(cartId);
+    });
+  });
 };
