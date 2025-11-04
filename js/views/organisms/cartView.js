@@ -1,3 +1,4 @@
+import { price2Dkk } from "../../utils/index.js";
 import { Div, Li, Ul } from "../atoms/index.js";
 
 export const cartListView = (data = []) => {

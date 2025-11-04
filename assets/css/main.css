@@ -86,6 +86,85 @@ footer {
   align-items: flex-end;
 }
 
+.antal-cart-items {
+  width: 10%;
+  font-weight: bold;
+}
+
+.produkt-cart-items {
+  width: 60%;
+  font-weight: bold;
+}
+
+.pris-cart-items {
+  width: 20%;
+  font-weight: bold;
+}
+
+.handling-cart-items {
+  width: 10%;
+  font-weight: bold;
+}
+
+.li {
+  display: flex;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  justify-content: space-between;
+}
+
+.quantity {
+  width: 10%;
+}
+
+.name {
+  width: 60%;
+}
+
+.price {
+  text-align: right;
+  width: 20%;
+}
+
+.action {
+  text-align: right;
+  width: 10%;
+}
+
+.cart-header {
+  display: flex;
+  gap: 0.75rem;
+  border-bottom: 1px solid #000000;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  justify-content: space-between;
+}
+
+.total-row {
+  display: flex;
+  gap: 0.75rem;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  justify-content: space-between;
+}
+
+.text-col {
+  width: 70%;
+  font-weight: bold;
+}
+
+.total-col {
+  width: 20%;
+  text-align: right;
+  font-weight: bold;
+}
+
+.space-col {
+  width: 10%;
+}
+
 .my-container {
   display: flex;
   justify-content: space-between;
