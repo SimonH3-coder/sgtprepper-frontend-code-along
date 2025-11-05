@@ -40,7 +40,7 @@ export const MainView = (title, content) => {
   element.className = "p-4 min-h-60 container m-auto flex-grow";
   const h1 = Heading(title);
   element.append(h1, content);
-  element.append(cookieBanner());
+  element.append(cookieBanner);
   return element;
 };
 
