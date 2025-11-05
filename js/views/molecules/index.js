@@ -37,9 +37,10 @@ export const NavBarView = (arrNavItems) => {
 
 export const MainView = (title, content) => {
   const element = document.createElement("main");
-  element.className = "p-4 min-h-60 container";
+  element.className = "p-4 min-h-60 container m-auto flex-grow";
   const h1 = Heading(title);
   element.append(h1, content);
+  element.append(cookieBanner());
   return element;
 };
 
