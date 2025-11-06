@@ -113,10 +113,8 @@ button {
   transition: background-color 0.2s ease;
 }
 
-&:hover {
-  #cookie-acceptall {
-    background-color: darken(#4caf50, 10%);
-  }
+#cookie-acceptall:hover {
+  background-color: darken(#4caf50, 10%);
 }
 
 #cookie-acceptsome {
@@ -130,11 +128,9 @@ button {
   transition: background-color 0.2s ease, border-color 0.2 ease;
 }
 
-&:hover {
-  #cookie-acceptsome {
-    background-color: darken(#222, 10%);
-    border-color: lighten(#666, 10%);
-  }
+#cookie-acceptsome:hover {
+  background-color: darken(#222, 10%);
+  border-color: lighten(#666, 10%);
 }
 
 .column-antal {
