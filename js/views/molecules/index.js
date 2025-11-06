@@ -1,3 +1,4 @@
+import { CookieBanner } from "../../controllers/cookieBannerController.js";
 import { Heading, Input, Label, Li, Link, Paragraph, Ul, Div } from "../atoms/index.js";
 
 export const HeaderView = (className = "") => {
@@ -40,7 +41,7 @@ export const MainView = (title, content) => {
   element.className = "p-4 min-h-60 container m-auto flex-grow";
   const h1 = Heading(title);
   element.append(h1, content);
-  element.append(cookieBanner);
+  element.append(CookieBanner());
   return element;
 };
 

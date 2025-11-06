@@ -1,6 +1,6 @@
-import { Div } from "../atoms/index.js";
+import { Button, Div } from "../atoms/index.js";
 
-export const CookieBanner = () => {
+export const cookieBannerView = () => {
   const overlay = Div("fixed hidden inset-0 z-[9998] bg-black/80 flex items-end md:items-center md:justify-center");
   overlay.id = "cookie-overlay";
   overlay.setAttribute("aria-hidden", "false");
@@ -16,7 +16,7 @@ export const CookieBanner = () => {
   text.innerText = "Vi bruger cookies til statistik og markedting. Du kan vælge nødvendige eller acceptere alle";
   const btns = Div("flex gap-2");
   const acceptAll = Button("Accepter alle", "button", "px-3 py-2 bg-[#4CAF50 text-[#666] rounded-md font-semibold");
-  acceptAll.id = "cookie-accept";
+  acceptAll.id = "cookie-acceptall";
 
   const acceptSome = Button("Kun nødvendige", "button", "px-3 py-2 bg-[#222] border-[#666] text-white rounded-md font-semibold");
   acceptSome.id = "cookie-acceptsome";
