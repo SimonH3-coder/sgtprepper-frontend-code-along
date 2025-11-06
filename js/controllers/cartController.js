@@ -33,7 +33,7 @@ export const Cartpage = async () => {
 };
 
 const attachCartListEvents = (container) => {
-  const deleteBtns = container.querySellectorAll("button[data-cartid]");
+  const deleteBtns = container.querySelectorAll("button[data-cartid]");
   deleteBtns.forEach((btn) => {
     btn.addEventListener("click", (e) => {
       const cartId = e.target.dataset.cartid;
