@@ -108,9 +108,8 @@ footer {
 
 .li {
   display: flex;
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
   justify-content: space-between;
+  padding: 0.25rem 0;
 }
 
 .quantity {
@@ -122,32 +121,30 @@ footer {
 }
 
 .price {
-  text-align: right;
   width: 20%;
+  text-align: right;
 }
 
 .action {
-  text-align: right;
   width: 10%;
+  text-align: right;
+}
+
+.cart-header,
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.25rem 0;
 }
 
 .cart-header {
-  display: flex;
-  gap: 0.75rem;
   border-bottom: 1px solid #000000;
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-  justify-content: space-between;
 }
 
 .total-row {
-  display: flex;
-  gap: 0.75rem;
   border-top: 1px solid;
   border-bottom: 1px solid;
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-  justify-content: space-between;
 }
 
 .text-col {
